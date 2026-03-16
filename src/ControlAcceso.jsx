@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import QRCode from 'qrcode.react';
+import { QRCodeSVG } from "qrcode.react"; // <-- Corregido aquí
 import "./Registro.css";
 
 const ControlAcceso = () => {
@@ -42,7 +42,9 @@ const ControlAcceso = () => {
 
       {qrGenerado && (
         <div style={{ textAlign: 'center', marginTop: '20px' }}>
-          <QRCode value={mascota} size={180} />
+          {/* Aquí es donde estaba el error, ya lo cambié por QRCodeSVG */}
+          <QRCodeSVG value={mascota} size={180} /> 
+          
           <p>QR generado para: <strong>{mascota}</strong></p>
 
           <button className="submit-button" onClick={validarAcceso}>
