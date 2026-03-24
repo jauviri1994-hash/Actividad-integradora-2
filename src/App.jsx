@@ -5,7 +5,8 @@ import ControlAcceso from './ControlAcceso.jsx';
 import Login from './Login.jsx'; 
 
 function App() {
-  const [vista, setVista] = useState('registro');
+  // Inicializamos la vista en 'login' para que sea la primera pantalla al entrar
+  const [vista, setVista] = useState('login');
 
   return (
     <div>
@@ -27,7 +28,8 @@ function App() {
       {/* Aquí controlo qué pantalla se muestra dependiendo del botón que se presione */}
       {vista === 'registro' && <RegistroGeneral />}
       {vista === 'acceso' && <ControlAcceso />}
-      {vista === 'login' && <Login />} {/* Muestro mi componente de Login cuando sea seleccionado */}
+      {/* Muestro mi componente de Login y le paso la función para cambiar de vista si Blanca lo requiere */}
+      {vista === 'login' && <Login cambiarVista={setVista} />} 
     </div>
   );
 }
