@@ -49,3 +49,19 @@ export const iniciarSesion = async (correo, password) => {
     return { exito: false, mensajeError: mensaje }; // Retorno el error formateado al frontend
   }
 };
+
+// --- FUNCIÓN PARA REGISTRO DE MASCOTAS (HISTORIA PPL-02) ---
+// Esta función recibe el objeto con los datos de la mascota desde el frontend y los guarda en mi base de datos
+export const registrarMascota = async (datosMascota) => {
+  try {
+    // Apunto a mi nueva colección "mascotas" en Firestore (se creará sola si no existe)
+    const docRef = await addDoc(collection(db, "mascotas"), datosMascota);
+    
+    console.log("¡Éxito! Registré la mascota en mi base con ID: ", docRef.id);
+    return { exito: true, id: docRef.id }; // Retorno éxito al frontend
+    
+  } catch (error) {
+    console.error("Hubo un error al guardar la mascota en mi base: ", error);
+    return { exito: false, mensajeError: "No se pudo conectar con la base de datos." };
+  }
+};

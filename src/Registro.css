@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #9fe4e4;
+  background-color: #9fe4e4; /* Mantengo el fondo aqua de mi diseño original */
   min-height: 100vh; 
   display: flex;
   align-items: center;
@@ -10,20 +10,21 @@ body {
 }
 
 .registration-container {
-  background-color: white;
+  background-color: white; /* El fondo de mi formulario es blanco */
   max-width: 450px;
   width: 90%;
   margin: 20px;
   padding: 30px;
   border: 3px solid #086164;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15); /* Hice la sombra un poco más fuerte para que resalte más del fondo */
 }
 
 h2 {
   text-align: center;
-  color: #2a6964;
+  color: #113f3d; /* Oscurecí el color del título para que tenga un contraste perfecto y no se pierda */
   margin-top: 10px;
+  font-weight: 800; /* Hice el título más grueso */
 }
 
 .tab-container {
@@ -55,9 +56,9 @@ h2 {
 
 .form-group label {
   display: block;
-  font-size: 14px;
-  font-weight: 600;
-  color: #348079;
+  font-size: 15px; /* Aumenté un punto el tamaño de la letra para mayor legibilidad */
+  font-weight: 700; /* Hice la letra más negrita */
+  color: #1a403d; /* Cambié el tono a un verde muy oscuro, casi negro, para que resalte sobre el fondo blanco */
   margin-bottom: 6px;
   margin-left: 2px;
 }
@@ -67,9 +68,10 @@ h2 {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
-  border: 1px solid #ccc;
+  border: 1px solid #999; /* Hice el borde de las cajas un poco más notorio */
   border-radius: 6px;
   font-size: 16px;
+  color: #333333; /* Aseguro que el texto que escriba el usuario sea oscuro */
 }
 
 .select-style {
@@ -92,5 +94,15 @@ h2 {
 }
 
 .submit-button:hover {
-  background-color: #49b4ab;
+  background-color: #064c46; /* Hice que el color al pasar el mouse sea más oscuro */
+}
+
+/* --- Ajuste específico de claridad para el Backend (PPL-02) --- */
+/* Esta regla asegura que, sin importar el diseño visual del contenedor, 
+   lo que el usuario escriba en las cajas de texto y selects siempre 
+   sea visible con un color oscuro. */
+.registration-container .form-group input,
+.registration-container .form-group select {
+  color: #000000 !important; /* Fuerza que la letra sea negra */
+  background-color: #ffffff !important; /* Asegura que el fondo del input sea blanco */
 }
